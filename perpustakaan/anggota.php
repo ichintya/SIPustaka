@@ -35,7 +35,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id_anggota DESC"
         .btn-add { background-color: #4F46E5; color: white; border-radius: 50px; font-weight: 500; padding: 8px 22px; border: none; transition: 0.3s; }
         .btn-add:hover { background-color: #4338CA; color: white; }
         
-        /* Ikon khusus user untuk menyamakan dengan icon-book */
+ 
         .icon-user { font-size: 40px; color: #4F46E5; background: #EEF2FF; padding: 10px; border-radius: 12px; margin-right: 15px; }
         
         .btn-action { width: 35px; height: 35px; display: inline-flex; justify-content: center; align-items: center; border-radius: 10px; border: none; transition: 0.2s; }
@@ -129,7 +129,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id_anggota DESC"
         </div>
     </div>
 
-    <!-- MODAL TAMBAH ANGGOTA -->
+
     <div class="modal fade" id="modalTambahAnggota" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -156,7 +156,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id_anggota DESC"
         </div>
     </div>
 
-    <!-- MODAL EDIT ANGGOTA -->
+   
     <div class="modal fade" id="modalEditAnggota" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -201,7 +201,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id_anggota DESC"
             });
             $('.dataTables_filter input').addClass('form-control form-control-sm border-0 bg-light rounded-pill px-3').css('box-shadow', 'none');
 
-            // 1. AJAX Tambah Anggota
+           
             $("#formInputAnggota").on('submit', function(e){
                 e.preventDefault();
                 $.ajax({
@@ -215,7 +215,6 @@ $query = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id_anggota DESC"
                 });
             });
 
-            // 2. Tampilkan Data di Modal Edit
             $(document).on('click', '.btn-edit-anggota', function(){
                 $('#edit_id_anggota').val($(this).data('id'));
                 $('#edit_nama_anggota').val($(this).data('nama'));
@@ -223,7 +222,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id_anggota DESC"
                 $('#modalEditAnggota').modal('show');
             });
 
-            // 3. AJAX Update Anggota
+  
             $("#formEditAnggota").on('submit', function(e){
                 e.preventDefault();
                 $.ajax({
@@ -237,7 +236,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id_anggota DESC"
                 });
             });
 
-            // 4. AJAX Hapus Anggota
+        
             $(document).on('click', '.btn-hapus-anggota', function(){
                 var id_anggota = $(this).data('id');
                 Swal.fire({
